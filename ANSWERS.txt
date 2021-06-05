@@ -1,0 +1,109 @@
+Answer 1 :
+
+<script>
+    function getEvenNumbers() {
+        var arr = [1, 2, 3, 4, 5, 6];
+
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] % 2 === 0) {
+                document.writeln(arr[i] + "<br />");
+            }
+        }
+    }
+
+    getEvenNumbers();
+</script>
+
+Answer 3 :
+
+function find_duplicate_in_array(arra1) {
+        var object = {};
+        var result = [];
+
+        arra1.forEach(function (item) {
+          if(!object[item])
+              object[item] = 0;
+            object[item] += 1;
+        })
+
+        for (var prop in object) {
+           if(object[prop] >= 2) {
+               result.push(prop);
+           }
+        }
+
+        return result;
+
+    }
+    
+ Answer 4 : // Given Url not working
+     
+import React, { Component } from 'react';
+import { View, Text } from 'react-native';
+
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: []
+    };
+  }
+
+  componentDidMount() {
+    this.apiCall();
+  }
+
+  async apiCall() {
+     fetch("www.example.com/api/get/1", {
+          method:"GET",
+          headers:{
+            "Content-Type" : "application/json",
+          }
+        }).then((response) => response.json())
+        .then ((result) => {
+          console.log(result);
+          this.setState({
+            records : result.response,
+          });
+        })
+        .catch((error) => console.log("error", error));
+     };
+  }
+
+  render() {
+    return (
+      <View>
+        <Text>Application</Text>
+      </View>
+    );
+  }
+}
+
+
+Answer 5 :
+
+var obj = [
+ {"id" : 4, "name" : "abc"},
+ {"id" : 10, "name" : "ab2"},
+ {"id" : 5, "name" : "abc3"},
+ {"id" : 6, "name" : "abc5"},
+];
+const sorted=obj.sort(function(a,b){return (a.id-b.id)}) 
+console.log(sorted);
+
+Output:
+
+[
+  { id: 4, name: 'abc' },
+  { id: 5, name: 'abc3' },
+  { id: 6, name: 'abc5' },
+  { id: 10, name: 'ab2' }
+]
+
+
+
+
+ 
+ 
+ 
+     
